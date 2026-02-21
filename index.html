@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Scientific Library</title>
+
+<style>
+body{margin:0;font-family:Arial;background:#eef2f7}
+header{background:#0b3d91;color:white;padding:22px;text-align:center;font-size:26px;font-weight:bold}
+.subtitle{text-align:center;color:#444;margin:15px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:20px;padding:30px}
+.card{background:white;padding:25px;border-radius:14px;text-align:center;
+box-shadow:0 5px 14px rgba(0,0,0,.15);transition:.25s;cursor:pointer;font-weight:bold}
+.card:hover{transform:scale(1.06);background:#0b3d91;color:white}
+.section{display:none;padding:25px}
+.section h2{text-align:center;color:#0b3d91}
+a{display:block;margin:8px 0;color:#0b3d91;text-decoration:none}
+.back{display:block;margin:25px auto;background:#0b3d91;color:white;border:none;padding:10px 20px;border-radius:10px;cursor:pointer}
+footer{text-align:center;color:#666;margin:40px 0}
+</style>
+
+<script>
+function openSection(id){
+document.getElementById("home").style.display="none";
+document.getElementById(id).style.display="block";
+window.scrollTo(0,0);
+}
+function goBack(){
+document.querySelectorAll(".section").forEach(s=>s.style.display="none");
+document.getElementById("home").style.display="grid";
+}
+</script>
+</head>
+
+<body>
+
+<header>Scientific Library</header>
+<div class="subtitle">Free Scientific Knowledge Platform</div>
+
+<div id="home" class="grid">
+<div class="card" onclick="openSection('cm')">Classical Mechanics</div>
+<div class="card" onclick="openSection('qm')">Quantum Mechanics</div>
+<div class="card" onclick="openSection('em')">Electromagnetism</div>
+<div class="card" onclick="openSection('rel')">Relativity</div>
+<div class="card" onclick="openSection('thermo')">Thermodynamics</div>
+</div>
+
+<div id="cm" class="section">
+<h2>Classical Mechanics</h2>
+<a href="https://archive.org/details/ClassicalMechanicsGoldstein">Goldstein Book</a>
+<a href="https://ocw.mit.edu/courses/8-01sc-classical-mechanics-fall-2016/">MIT Course</a>
+<button class="back" onclick="goBack()">Back</button>
+</div>
+
+<div id="qm" class="section">
+<h2>Quantum Mechanics</h2>
+<a href="https://archive.org/details/IntroductionToQuantumMechanicsGriffiths">Griffiths Book</a>
+<button class="back" onclick="goBack()">Back</button>
+</div>
+
+<div id="em" class="section">
+<h2>Electromagnetism</h2>
+<a href="https://archive.org/details/IntroductionToElectrodynamicsGriffiths">Griffiths E&M</a>
+<button class="back" onclick="goBack()">Back</button>
+</div>
+
+<div id="rel" class="section">
+<h2>Relativity</h2>
+<a href="https://archive.org/details/SpacetimePhysicsTaylor">Spacetime Physics</a>
+<button class="back" onclick="goBack()">Back</button>
+</div>
+
+<div id="thermo" class="section">
+<h2>Thermodynamics</h2>
+<a href="https://archive.org/details/ThermalPhysicsSchroeder">Thermal Physics</a>
+<button class="back" onclick="goBack()">Back</button>
+</div>
+
+<footer>Knowledge should be free</footer>
+
+</body>
+</html>
